@@ -2,10 +2,11 @@ import os
 from flask import Flask , render_template ,request
 from .crud import add_note, get_note, delete_note, update_note
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # หาตำแหน่งของไฟล์ app.py
-TEMPLATE_DIR = os.path.join(BASE_DIR,'..','templates')  # ระบุ path ไปยัง templates/
+# กรณีแยก path templates
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # หาตำแหน่งของไฟล์ app.py
+# TEMPLATE_DIR = os.path.join(BASE_DIR,'..','templates')  # ระบุ path ไปยัง templates/
 
-app =  Flask(__name__, template_folder=TEMPLATE_DIR)
+app =  Flask(__name__)
 
 @app.route('/')
 def index():    
